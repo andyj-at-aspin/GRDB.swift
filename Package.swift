@@ -6,10 +6,10 @@ import PackageDescription
 let package = Package(
     name: "GRDB",
     platforms: [
-        .iOS("10.0"),
-        .macOS("10.10"),
-        .tvOS("9.0"),
-        .watchOS("2.0"),
+        .iOS("11.4"),
+        .macOS("10.13"),
+        .tvOS("11.4"),
+        .watchOS("4.3"),
     ],
     products: [
         .library(name: "GRDB", targets: ["GRDB"]),
@@ -23,7 +23,11 @@ let package = Package(
         .target(
             name: "GRDB",
             dependencies: ["CSQLite"],
-            path: "GRDB"),
+            path: "GRDB",
+            swiftSettings: [
+                .define("SQLITE_ENABLE_FTS5"),
+                .unsafeFlags(["-D SQLITE_ENABLE_FTS5"]),
+            ]),
         .testTarget(
             name: "GRDBTests",
             dependencies: ["GRDB"],
