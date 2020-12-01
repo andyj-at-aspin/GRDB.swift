@@ -26,7 +26,6 @@ let package = Package(
             path: "GRDB",
             swiftSettings: [
                 .define("SQLITE_ENABLE_FTS5"),
-                .unsafeFlags(["-D SQLITE_ENABLE_FTS5"]),
             ]),
         .testTarget(
             name: "GRDBTests",
