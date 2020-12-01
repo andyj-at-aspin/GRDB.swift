@@ -1,0 +1,17 @@
+
+To update this fork to the latest from the main GRDB project:
+
+Information sources:
+https://stackoverflow.com/questions/7244321/how-do-i-update-a-github-forked-repository
+https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/syncing-a-fork
+
+Go to the console prompt in the root of the project
+
+git fetch upstream
+git checkout master
+git merge upstream/master
+git push
+
+Depending on how the GRDB-Fork project is used (and if versioning is required) you will have to apply a NEW tag to the master branch and push it so that SPM can see the merged changes elsewhere.
+
+

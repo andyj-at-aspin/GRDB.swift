@@ -81,7 +81,6 @@ private class UserFTS5CustomTokenizer : FTS5CustomTokenizer {
 // MARK: - FTS5WrapperTokenizer
 
 #if SQLITE_ENABLE_FTS5
-@available(iOS 11.4, macOS 10.13, tvOS 11.4, watchOS 4.3, *)
 private class UserFTS5WrapperTokenizer : FTS5WrapperTokenizer {
     static let name: String = "UserFTS5WrapperTokenizer"
     var wrappedTokenizer: FTS5Tokenizer { preconditionFailure() }
@@ -89,6 +88,7 @@ private class UserFTS5WrapperTokenizer : FTS5WrapperTokenizer {
     func accept(token: String, flags: FTS5TokenFlags, for tokenization: FTS5Tokenization, tokenCallback: (String, FTS5TokenFlags) throws -> ()) throws { preconditionFailure() }
 }
 #else
+@available(iOS 11.4, macOS 10.13, tvOS 11.4, watchOS 4.3, *)
 private class UserFTS5WrapperTokenizer : FTS5WrapperTokenizer {
     static let name: String = "UserFTS5WrapperTokenizer"
     var wrappedTokenizer: FTS5Tokenizer { preconditionFailure() }
